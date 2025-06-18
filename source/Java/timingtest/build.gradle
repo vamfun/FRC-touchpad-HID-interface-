@@ -1,0 +1,25 @@
+plugins { 
+    id "java" 
+    id "application" 
+} 
+
+group = "timingtest" 
+version = "1.0" 
+
+repositories { 
+    mavenCentral()
+    // maven { url 'https://jitpack.io' }  // You only need this if you're using JitPack, which isn't necessary for hid4java
+} 
+
+dependencies { 
+    implementation 'org.hid4java:hid4java:0.8.0'  // Keep only this version
+    implementation "com.fazecast:jSerialComm:2.9.2"
+    implementation "net.java.jinput:jinput:2.0.9"
+     
+}
+
+application { 
+   // mainClass = "timingtest.timingtest"
+   //  mainClass = 'timingtest.timingtest'
+    mainClass = "timingtest.HidReporter"
+}

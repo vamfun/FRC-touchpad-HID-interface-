@@ -1,0 +1,30 @@
+plugins {
+    id 'application'
+    id 'java'
+}
+
+group = "FRCtouchpadGUI"
+
+repositories {
+    mavenCentral()  // For other dependencies (if any)
+}
+
+dependencies {
+    implementation 'com.fazecast:jSerialComm:2.9.3'
+
+    // Option 1: Use Maven Central (recommended)
+    implementation 'org.hid4java:hid4java:0.8.0'  // Latest version
+
+    // Option 2: If using local JAR (ensure native libs are included)
+     //implementation files('libs/hid4java.jar')
+    
+    // Required for HIDAPI native libs (JNA)
+    implementation 'net.java.dev.jna:jna:5.13.0'
+}
+
+application {
+     mainClass = 'FRCtouchpadGUI.FRCtouchpadGUI'
+}
+
+sourceCompatibility = '17'
+targetCompatibility = '17'
